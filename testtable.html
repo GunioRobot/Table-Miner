@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+  <head>
+    <title>Top Secret Test Schtuff</title>
+   
+    <script type="text/javascript" src="https://www.google.com/jsapi?key=INSERT-YOUR-KEY"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+   <!--This is the grab table code. It is an open source plugin provided by Kunal Babre-->
+    <script type="text/javascript" src="http://www.kunalbabre.com/projects/table2CSV.js" > </script>
+    
+    <script language="Javascript" type="text/javascript">
+    </script>
+  </head>
+ 
+ 
+  <body>
+   <table border="1" id="example1">
+   <tr>
+   	<td>Some stuff</td>
+   	<td>Some more stuff</td>
+   	<td>Some other stuff</td>
+   </tr>
+   <tr>
+   	<td>Second stuff</td>
+   	<td>Some more second stuff</td>
+   	<td>Some last second stuff</td>
+   </tr>
+   </table>
+ 
+<form action="getCSV.php" method ="post" > 
+<input type="hidden" name="csv_text" id="csv_text">
+<input type="submit" value="Get CSV File" 
+       onclick="getCSVData()"
+</form>
+
+<script>
+function getCSVData(){
+ var csv_value=$('#example1').table2CSV({delivery:'value'});
+ $("#csv_text").val(csv_value);	
+}
+</script>
+
+<script> 
+function getCSVData(){
+ var csv_value=$('#example1').table2CSV({delivery:'value'});
+ $("#csv_text").val(csv_value);
+}
+</script> 
+ 
+  </body>
+  
+  
+</html>
